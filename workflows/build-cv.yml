@@ -1,11 +1,12 @@
 name: Build CV (Pandoc) and Publish to Pages
+
 on:
   push:
     branches: [ main ]
     paths:
-      - 'cv/**'
+      - 'cv/**'                      # only trigger when cv files change
       - '.github/workflows/build-cv.yml'
-  workflow_dispatch:
+  workflow_dispatch:                 # optional manual run
 
 permissions:
   contents: read
@@ -19,20 +20,28 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
+      # 1️⃣ Install dependencies
       - name: Install Pandoc and TeX
         run: |
           sudo apt-get update
           sudo apt-get install -y pandoc texlive texlive-latex-recommended texlive-latex-extra
 
+      # 2️⃣ Build the HTML CV
       - name: Build HTML CV
         working-directory: cv
         run: |
-          # If you have a template.html, add: --template=template.html
-          pandoc cv.tex -o index.html --standalone --metadata title="Vinny Gupta — CV" --css style.css
+          pandoc cv.tex -o index.html \
+            --standalone \
+            --css style.css \
+            --citeproc \
+            --bibliography=refs.bib \
+            --metadata title="Vinny Gupta — CV"
 
+      # 3️⃣ Upload to GitHub Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
