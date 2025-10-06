@@ -1,0 +1,8 @@
+:root { --max: 900px; }
+body { margin: 2rem auto; max-width: var(--max); line-height: 1.45; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+h1,h2,h3 { margin-top: 2rem; }
+h1 { font-size: 1.8rem; margin-bottom: .2rem; }
+h2 { font-size: 1.3rem; border-bottom: 1px solid #ddd; padding-bottom: .25rem; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+section { margin-block: 1rem; }
