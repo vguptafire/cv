@@ -23,28 +23,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Install Pandoc + minimal TeX (enough for most CVs)
+      # Debug: confirm paths
+      - name: Show repo layout
+        run: |
+          pwd
+          ls -la
+          echo "--- cv dir ---"
+          ls -la ./cv || true
+
       - name: Install Pandoc and TeX
         run: |
           sudo apt-get update
           sudo apt-get install -y pandoc texlive texlive-latex-recommended texlive-latex-extra
 
-      # Build HTML (Pandoc citeproc w/ refs.bib and custom CSS)
-      - name: Build HTML CV
-        working-directory: cv
+      - name: Build HTML CV (explicit paths; no working-directory)
         run: |
-          pandoc cv.tex -o index.html \
+          test -f ./cv/cv.tex || { echo "cv/cv.tex not found"; exit 1; }
+          pandoc ./cv/cv.tex -o ./cv/index.html \
             --standalone \
-            --css style.css \
+            --css ./cv/style.css \
             --citeproc \
-            --bibliography=refs.bib \
+            --bibliography=./cv/refs.bib \
             --metadata title="Vinny Gupta — CV"
 
-      # Publish the /cv folder (contains index.html, style.css, etc.)
-      - name: Upload artifact
+      - name: Upload artifact (publish the cv/ folder)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: cv
+          path: ./cv
 
   deploy:
     needs: build
