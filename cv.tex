@@ -1,0 +1,461 @@
+%% Dr. Vinny Gupta - Curriculum Vitae
+
+\documentclass[12pt,letterpaper]{report}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) so accented characters are a single glyph
+\usepackage[utf8]{inputenc} % allow input of utf-8 encoded characters
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % automatically regionalize hyphens, quote marks, etc
+\usepackage{microtype} % improves text appearance with kerning, etc
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto} % make nice tabbing
+\usepackage{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+
+% what is your name?\newcommand{\myname}{Vinny Gupta}
+
+% define a default font face and set it as the body font
+\usepackage{crimson} % document's serif font
+\usepackage{helvet}  % document's sans serif font
+
+% define how far to tab for list items with left-aligned date - different font faces need different widths
+\newcommand{\listtabwidth}{1.75cm}
+
+% set name font to title the document
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\SetTracking{encoding=*}{20}
+\titleformat{\section}{\sffamily\small\bfseries\lsstyle\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{24pt plus 4pt minus 2pt}{12pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{8pt plus 2pt minus 2pt}
+
+% set page margins
+\geometry{body={6.5in, 9.0in},
+    left=1.0in,
+    top=0.8in}
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% define space between list items
+\newcommand{\listitemspace}{0.15em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+            \setlength{\parskip}{0em}
+            \setlength{\itemsep}{\listitemspace}
+            \setlength{\parsep}{\listitemspace}}}
+    {\end{list}}
+
+% make tabbed lists so content is left-aligned next to years
+\TabPositions{\listtabwidth}
+\newlist{tablist}{description}{3}
+\setlist[tablist]{leftmargin=\listtabwidth,
+    labelindent=0em,
+    topsep=0em,
+    partopsep=0em,
+    itemsep=\listitemspace,
+    parsep=\listitemspace,
+    font=\normalfont}
+
+% print the month and year only when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+    colorlinks  = true,
+    urlcolor    = black,
+    pdfauthor   = {Vinny Gupta},
+ %   pdfkeywords = {city planning, housing, street networks, transportation, urban design, urban informatics},
+    pdftitle    = {Vinny Gupta: Curriculum Vitae},
+    pdfsubject  = {Curriculum Vitae},
+    pdfpagemode = UseNone
+}
+
+\pagestyle{empty}
+
+\begin{document}
+    \raggedright
+
+    % display name as the document title
+    \namefont{Vinny Gupta}
+
+    % affiliation and contact info blocks
+    \vspace{1em}
+    \begin{minipage}[t]{0.700\textwidth}
+        % current primary affiliation, left-aligned
+		Department of Mechanical and Mechatronics Engineering	\\        
+        Faculty of Engineering \\
+        University of Waterloo
+    \end{minipage}
+    \begin{minipage}[t]{0.295\textwidth}
+        % contact info details, right-aligned
+        \flushright{}
+        \href{mailto:vinny.gupta@uwaterloo.ca}{vinny.gupta@uwaterloo.ca} \\
+        +(1) 226-606-0484 \\
+        \href{https://orcid.org/0000-0003-0514-5834}{0000-0003-0514-5834}
+    \end{minipage}
+
+%  % contact info
+%\vspace{1em}
+%\begin{minipage}[t]{0.4\textwidth}
+%Email: \href{mailto:vinny.gupta@sydney.edu.au}{vinny.gupta@sydney.edu.au} \\
+%Phone: +(61) 424 032 837 \\
+%  ORCID: \href{https://orcid.org/0000-0003-0514-5834}{0000-0003-0514-5834} \\
+%% \href{https://scholar.google.com/citations?user=OHVguZIAAAAJ&hl=en}{Google Scholar}
+%\end{minipage}
+%\vspace{0.5em}
+
+   % \section*{Research Interests}
+    
+%	experimental combustion, fire dynamics, laser diagnostics, fire suppression, fluid mechanics, and heat transfer 	
+	    \section*{Education}
+
+    \begin{tablist}
+
+        \item[PhD] \tab{}Fire Safety Engineering, The University of Queensland, 2021
+        \\ Thesis: \textit{Open-plan compartment fire dynamics}
+        \\ Supervisor: Dr. Juan P. Hidalgo \\
+        
+        \item[BEng]  \tab{}Mechanical Engineering, The University of Queensland, 2015
+        \\ Thesis: \textit{Evaluation of material flammability: Spacecraft fire safety experiment}
+        \\ Supervisor: Prof. Jos\'{e} L. Torero
+
+    \end{tablist}
+
+    \section*{Appointments}
+
+    \begin{tablist}
+
+        \item[2024--] \tab \textbf{Assistant Professor} \\
+                          University of Waterloo, Canada \\
+ 
+        \item[2021--24] \tab \textbf{Research Associate} \\
+                          The University of Sydney, Australia \\
+
+		\item[2022--23] \tab \textbf{Lecturer in Fire Safety Engineering} (0.2 FTE) \\
+                          The University of Queensland, Australia \\	
+
+        \item[2018--19] \tab \textbf{Research Assistant} \\
+                          UQ Fire Consultancy, Australia \\
+ 
+        \item[2018--18] \tab \textbf{Visiting Researcher} \\
+                           Research Institutes of Sweden (RISE), Sweden   \\
+
+    \end{tablist}
+
+\section*{Grant Funding}
+
+\begin{tablist}
+
+    \item[2025--29] \tab \textbf{Canadian Innovation Fund - John R. Evans Leaders Fund (CFI-JELF)} \newline
+    \textit{Fast spectral imaging of fire emissions} \newline
+    \textbf{CAD \$120,000} (100\% share) \newline
+    Principal Investigator  
+
+    \item[2025--29] \tab \textbf{National Sciences and Engineering Research Council (NSERC): Discovery} \newline
+    \textit{Fire and explosion dynamics in Li-ion battery storage} \newline
+    \textbf{CAD \$202,500} (100\% share) \newline
+    Principal Investigator  
+
+    \item[2025--26] \tab \textbf{NSERC General Research Fund: Equipment Upgrade and Repair (GRF-RERUR)} \newline
+    \textit{Thermal imaging of fires} \newline
+    \textbf{CAD \$10,000} (100\% share) \newline
+    Principal Investigator        
+
+    \item[2024--27] \tab \textbf{NSERC Alliance: Next Generation Wood Construction} \newline
+    \textit{Quantifying the external flaming risk from mass timber compartments} \newline
+    \textbf{CAD \$56,000} (100\% share) \newline
+    Principal Investigator  
+
+    \item[2024--25] \tab \textbf{Society of Fire Safety (Engineers Australia)} \newline
+    \textit{Evaluating the ignition and jet flaming hazard of Li-ion cells in thermal runaway} \newline
+    \textbf{AUD \$5,000} (100\% share) \newline
+    Principal Investigator  
+
+    \item[2023--24] \tab \textbf{Halliwell: Microgrant} \newline
+    \textit{Auto-ignition and propagation of jet flames ejected from lithium-ion battery cells during thermal runaway} \newline
+    \textbf{NZD \$2,500} (100\% share) \newline
+    Principal Investigator
+
+    \item[2022--22] \tab \textbf{Alicat Scientific: Merit Grant} \newline
+    \textbf{USD \$2,000} (100\% share) \newline
+    Principal Investigator  
+
+\end{tablist}
+
+    \section*{Awards} % to-do --> needs to be truncated down
+
+    \begin{tablist}
+
+        \item[2025] \tab \textbf{Distinguished Paper Award}, Combustion Institute. Best paper in \enquote{Fire Research} presented at the 40th International Symposium on Combustion. 
+                    
+        \item[2021] \tab \textbf{Sheldon Tieszen Student Award}, International Forum of Fire Research Directors. Best student-led paper at the 13\textsuperscript{th} International Symposium on Fire Safety Science. 
+
+        \item[2019] \tab \textbf{Best Poster Prize}, 1\textsuperscript{st} Asia-Pacific Combustion Institute Summer School in Valparaiso, Chile. 
+       
+    \end{tablist} 
+
+    \section*{Teaching Experience}
+
+	\subsection*{Program Management}   
+
+        \begin{tablist}
+        
+        \item{2025--} \tab Co-director of the University of Waterloo Fire Safety Engineering MEng program.
+        
+        \end{tablist}
+
+    	\subsection*{Course Instruction}   
+   
+    \begin{tablist}
+
+        \item[2025--] \tab Course coordinator, Fire Safety Engineering (ME 567, undergraduate) at University of Waterloo.
+        
+        \item[2025--] \tab Course coordinator, Fire Dynamics (ME 671, postgraduate). University of Waterloo.
+        
+        \item[2024--] \tab Course coordinator, Ordinary Differential Equations (ME 203, undergraduate). University of Waterloo.
+        
+    	\item[2022--23] \tab Course coordinator (part-time), Fire Dynamics (FIRE 7620, postgraduate). The University of Queensland.    	
+                        
+	\end{tablist} 	
+    
+    \section*{Service}
+
+    \subsection*{Scientific}
+    
+    \begin{tablist}
+
+    	\item[2024--26] \tab \textbf{Early Career Committee Co-Chair}, 15th International Symposium on Fire Safety Science
+
+        \item[2024--26] \tab \textbf{Guest Editor}, Applications in Energy and Combustion Science
+
+    	\item[2024--24] \tab \textbf{Session Chair}, 40th International Symposium on Combustion
+
+    	\item[2023--23] \tab \textbf{Technical Committee Member}, 2023 Australian Combustion Symposium
+        
+       	\item[2022--23] \tab \textbf{Workshop Chair}, 13th International Symposium on Fire Safety Science
+        
+        \item[2020--] \tab \textbf{Journal Reviewer}, \textit{Proceedings of the Combustion Institute}, \textit{Fire Safety Journal}, \textit{Applications in Energy and Combustion Science}, \textit{Fire Technology}, \textit{Combustion Science and Technology}, \textit{Combustion and Flame}, \textit{Frontiers in Mechanical Engineering}, \textit{Applied Thermal Engineering}  
+
+    	\item[2018--21] \tab \textbf{Vice President}, UQ Society of Fire Protection Engineers Student Chapter
+
+
+
+    \end{tablist}	
+
+    \subsection*{Professional Membership}
+
+    \begin{tablist}
+
+        \item[2019--] \tab Combustion Institute, Australia \& New Zealand (ANZ) Section
+        \item[2019--] \tab International Association for Fire Safety Science
+        \item[2015--] \tab Society of Fire Protection Engineers
+        
+    \end{tablist}
+   
+    \section*{Publications}
+
+    \subsection*{Articles in Peer-Reviewed Journals}
+    
+    \begin{tablist}
+
+     \item[2025] \tab A.R.W Macfarlane, \textbf{V. Gupta}, M.J. Dunn, A.R. Masri. \textbf{\enquote{High-speed 10 kHz measurements of CN-PLIF in cofired NH3 hydrocarbon flames}}. \textit{Proceedings of the Combustion Institute}. (in-press).
+    
+    \item[2025] \tab \textbf{V. Gupta}, M.J. Dunn, A.R.W. Macfarlane, T. Xiao, A. Farooq, A.R. Masri. \textbf{\enquote{Analysis of ejecta ignition and velocity from 18605 Li-ion battery cells during thermal runaway}}. \textit{Journal of Power Sources} 237679. \href{https://www.sciencedirect.com/science/article/pii/S0378775325015332}{doi:/10.1016/j.jpowsour.2025.237697}.
+
+	\item[2025] \tab F. Wiesner, H. Xu, D. Lange, \textbf{V. Gupta}, I. Pope, J.L. Torero, J.P. Hidalgo. \textbf{\enquote{Large-scale compartment fires to develop a self-extinction design framework for mass timber—Part 2: Results, analysis and design implications.}} \textit{Fire Safety Journal} 152. \href{https://doi.org/10.1016/j.firesaf.2025.104346}{doi:/10.1016/j.firesaf.2025.104346}.
+
+    \item[2024] \tab T. Xiao, \textbf{V. Gupta}, M.J. Dunn, A.R. Masri. \textbf{\enquote{Joint Mie-LIF-OH imaging of enhanced water mist suppression of buoyant fires}}. \textit{Proceedings of the Combustion Institute} 40. \href{https://doi.org/10.1016/j.proci.2024.105331}{doi:/10.1016/j.proci.2024.105331}.
+
+	\item[2023] \tab \textbf{V. Gupta}, T. Xiao, M.J. Dunn, J.L. Torero, A.R. Masri, \textbf{\enquote{Leading edge stabilisation of vertical boundary layer diffusion flames}}. \textit{Fire Safety Journal} 141. \href{https://doi.org/10.1016/j.firesaf.2023.103969}{doi:/10.1016/j.firesaf.2023.103969}.
+
+ 	\item[2023] \tab T. Xiao, \textbf{V. Gupta}, A.R.W. Macfarlane, C. Kennedy, M.J. Dunn, A. Kourmatzis, J.L. Torero, A.R. Masri, \textbf{\enquote{On the structure of buoyant fires with varying levels of fuel-turbulence}}. \textit{Combustion and Flame} 258. \href{https://doi.org/10.1016/j.combustflame.2023.112993}{doi:/10.1016/j.combustflame.2023.112993}.
+
+	\item[2023] \tab I. Pope, \textbf{V. Gupta}, H. Xu, F. Wiesner, D. Lange, J.L. Torero, J.P. Hidalgo, \textbf{\enquote{Fully-developed compartment fire dynamics in large-scale mass timber compartments}}. \textit{Fire Safety Journal} 141. \href{https://doi.org/10.1016/j.firesaf.2023.104022}{doi:/10.1016/j.firesaf.2023.104022}.
+        
+	\item[2022] \tab A.A Kahn, Z. Nan,  L. Jiang, \textbf{V. Gupta}, S. Chen, M.A. Kahn, J.P. Hidalgo, A. Usmani. \textbf{\enquote{Model characterisation of localised burning impact from localised fire tests to travelling fire scenarios}}. \textit{Journal of Building Engineering} 54. \href{https://doi.org/10.1016/j.jobe.2022.104601}{doi:/10.1016/j.jobe.2022.104601}.
+
+	\item[2022] \tab S. Nothard, D. Lange, J.P. Hidalgo, \textbf{V. Gupta}, M.S. McLaggan, F. Wiesner, J.L. Torero \textbf{\enquote{Factors influencing the fire dynamics in open-plan compartments with an exposed timber ceiling}}. \textit{Fire Safety Journal} 129. \href{https://doi.org/10.1016/j.firesaf.2022.103564}{doi:/10.1016/j.firesaf.2022.103564}.
+    	
+	\item[2022] \tab H. Xu, I. Pope, \textbf{V. Gupta}, J. Cadena, J. Carrascal, D. Lange, J. Mendez, M.S. McLaggan, A. Osorio, A. Solarte, D. Soriguer, J.L. Torero, F. Wiesner, A. Zaben, and J.P. Hidalgo. \textbf{\enquote{Large-scale compartment fires to develop a self-extinction design framework for mass timber—Part 1: literature review and methodology}}, \textit{Fire Safety Journal} 128. \href{https://doi.org/10.1016/j.firesaf.2022.103523}{doi:/10.1016/j.firesaf.2022.103523}.   	
+
+	\item[2021] \tab \textbf{V. Gupta}, J.P. Hidalgo, D. Lange, A. Cowlard, C. Abecassis-Empis, J.L. Torero. \textbf{\enquote{A review and analysis of the thermal exposure in large compartment fire experiments}}, \textit{International Journal of High-Rise Buildings} 10. \href{https://doi.org/10.21022/IJHRB.2021.10.4.345}{doi:/10.21022/IJHRB.2021.10.4.345}
+
+	\item[2021] \tab M.S. McLaggan, \textbf{V. Gupta}, J.P. Hidalgo, J.L. Torero. 	\textbf{\enquote{Upward flame spread for fire risk classification of high-rise buildings}}, 	\textit{International Journal of High-Rise Buildings} 10. \href{https://doi.org/10.21022/IJHRB.2021.10.4.299}{doi:/10.21022/IJHRB.2021.10.4.299}.
+
+    \item[2021] \tab \textbf{V. Gupta}, J.L. Torero, J.P. Hidalgo. \textbf{\enquote{Burning dynamics and in-depth flame spread of wood cribs in large compartment fires}}. \textit{Combustion and Flame} 228. \href{https://doi.org/10.1016/j.combustflame.2021.01.031}{doi:/10.1016/j.combustflame.2021.01.031}. 
+
+	\item[2020] \tab \textbf{V. Gupta}, A.F. Osorio, J.L. Torero, J.P. Hidalgo. \textbf{\enquote{Mechanisms of flame spread and burnout in large enclosure fires}}. \textit{Proceedings of the Combustion Institute} 38. \href{https://doi.org/10.1016/j.proci.2020.07.074}{doi:/10.1016/j.proci.2020.07.074}.
+    	
+    \item[2020] \tab \textbf{V. Gupta}, J.P. Hidalgo, A. Cowlard, C. Abecassis-Empis, A.H. Majdalani, C. Maluk, J.L. Torero. \textbf{\enquote{Ventilation effects on the thermal characteristics of fire spread modes in open-plan compartment fires}}. \textit{Fire Safety Journal} 120. \href{https://doi.org/10.1016/j.firesaf.2020.103072}{doi:/10.1016/j.firesaf.2020.103072}. \textbf{Sheldon Tieszen Student Award}. 
+    	
+    \item[2019] \tab J.P. Hidalgo, T. Goode, \textbf{V. Gupta}, A. Cowlard, C. Absecassis-Empis, J. Maclean, A. Bartlett, C. Maluk, J.M. Subirats, A.F. Osorio, J.L. Torero. \textbf{\enquote{The Malveira fire test: Full-scale demonstration of fire modes in open-plan compartments}}. \textit{Fire Safety Journal} 108. \href{https://doi.org/10.1016/j.firesaf.2019.102827}{doi:/10.1016/j.firesaf.2019.102827}.
+
+	\end{tablist}
+
+    \subsection*{Manuscripts under Review}
+
+	\begin{tablist}			
+
+    \item[2025] \tab \textbf{V. Gupta}, K. Senez, I. Pope, F. Wiesner, A. Lucherini, D. Lange, J.L. Torero, E.J Weckman, J.P. Hidalgo. \textbf{\enquote{Burning of liquid pools and wood cribs in large fully-developed timber compartment fires}}. \textit{Fire Safety Journal}, September 2025.
+
+    \item[2025] \tab A. Alsewailem, J. Janardhanraj, M. Sy, \textbf{V. Gupta}, M.J. Dunn, A.R. Masri, A. Farooq. \textbf{\enquote{Near-field quantification of hydrogen fluoride emissions during Li-ion battery thermal runaway using laser absorption spectroscopy}}. \textit{Journal of Power Sources}, September 2025.
+   
+    \item[2025] \tab S. Mazzadi, A. Lakhani, \textbf{V. Gupta}, E.J. Weckman, J.L. Pulsipher. \textbf{\enquote{A framework for high-dimensional fire sensor analysis}}. \textit{Fire Safety Journal}, September 2025.
+
+    \item[2025] \tab I. Pope, A. Lucherini, J.L. Torero, A. Solarte, D. Soriguer, \textbf{V. Gupta}, F. Wiesner, D. Lange, J.P. Hidalgo. \textbf{\enquote{Charring and in-depth thermal penetration within cross-laminated timber elements in large-scale compartment fires}}. \textit{Fire Safety Journal}, September 2025.
+
+    \item[2025] \tab D. Lange, D. Morrisset, A.T. Mohan, J. Madden, W. Wu, A. Orabi, R. Hilditch, F. Wiesner, M.S. Mclaggan, \textbf{V. Gupta}, J.P. Hidalgo, I. Pope, M. Woodrow, J.L. Torero. \textbf{\enquote{The Fire Safety Strategy – A definition and considerations for its instantiation}}. \textit{Fire Safety Journal}, September 2025.
+
+    \item[2025] \tab T. Xiao, \textbf{V. Gupta}, M.J. Dunn, A.R. Masri. \textbf{\enquote{High spatial and temporal evolution of flame-droplet interactions in chemically enhanced water mist fire suppression}}. \textit{Proceedings of the Combustion Institute}, July 2025.
+
+	\item[2025] \tab J.L. Torero, W. Jahn, I. Calderon, D. Fernando, R. Emberley, \textbf{V. Gupta}, G. Jomaas, F. Wiesner, D. Lange, A.H. Majdalani. \textbf{\enquote{Delivering fire safety for tall buildings: state-of-the-art and challenges}}. \textit{Applications in Energy and Combustion Science}, February 2025.
+        
+	\item[2025] \tab J.E Cadena, \textbf{V. Gupta}, A.H. Majdalani, J.L Torero, J.P Hidalgo. \textbf{\enquote{Modelling the limiting and intermediate regimes of fully-developed compartment fires}}. \textit{Fire Safety Journal}, August 2023.
+        
+		%\item[2021] \tab S. Pandit, \textbf{V. Gupta}, J,P. Hidalgo. \textbf{\enquote{A methodology to study the coupling effect of the fuel and compartment on the fire evolution in open-plan compartments}}. \textit{The 12th Asia-Oceania Symposium on Fire Science and Technology}, April 2021.
+				
+	\end{tablist}
+
+    
+%	\end{tablist}
+	
+ 
+    \section*{Conference Activity}
+
+    \subsection*{Invited keynotes and presentations}
+	
+	\begin{tablist}
+
+    \item[2025] \tab \textbf{\enquote{Laboratory experiments investigating thermal runaway of lithium-ion battery cells}}, Conexus Nuclear Fire Protection Peer Group Meeting, Chalk River, Canada. October. 
+
+    \item[2023] \tab \textbf{\enquote{Self-extinction framework in large timber compartment fires}}, Institute of Fire Engineers Annual Conference 2023, Brisbane, Australia. August. 
+
+    \item[2023] \tab \textbf{\enquote{Understanding the scales of building fires}}, FM Global, Norwood, United States of America. March. 
+ 
+	\item[2022] \tab \textbf{\enquote{Fire dynamics and suppression in modern buildings}}, Danish Institute of Fire and Security Technology, Copenhagen, Denmark. June. 
+	
+	\item[2022] \tab \textbf{\enquote{Fire safety research at The University of Queensland}}, Imperial College London, London, Australia. June. 
+ 
+	\item[2021] \tab \textbf{\enquote{Understanding the different scales of compartment fires}}, University of Maryland, Washington DC, USA. October. 
+
+    \item[2019] \tab \textbf{\enquote{The challenges of prescribing an appropriate design fire for the structurally safe design of contemporary architecture}}, Institute of Fire Engineers Annual Conference, Melbourne, Australia. August.
+	
+	\end{tablist}
+
+ \subsection*{Conference Proceedings}
+	
+	\begin{tablist}	
+
+        \item[2025] \tab \textbf{V. Gupta}, A.R.W Macfarlane, A. Alsewailem, M.J. Dunn, T. Xiao, J. Subburaj, A. Farooq, A.R. Masri. \textbf{\enquote{Revealing ignition modes of Li-ion battery cells under thermal runaway with joint high-speed imaging}}. \textit{Proceedings of the 15th International Asia-Pacific Conference on Combustion}, May 2025.
+
+        \item[2023] \tab \textbf{V. Gupta}, T. Xiao, M. Dunn, J.L. Torero, A.R. Masri. \textbf{\enquote{\textbf{Temperature and mixture fraction imaging in a vertical wall fire}}}. \textit{Proceedings of the 2023 Australian Combustion Symposium}, November 2023.
+
+        \item[2023] \tab \textbf{V. Gupta}, M. Dunn, C. Avila Jiminez, A.R.W. Macfarlane, S. Galindo Lopez, A.R. Masri. \textbf{\enquote{\textbf{Venting of 18650 lithium-ion batteries during thermal runaway}}}. \textit{Proceedings of the 2023 Australian Combustion Symposium}, November 2023.
+
+        \item[2023] \tab T. Xiao, \textbf{V. Gupta}, M. Dunn, A.R. Masri. \textbf{\enquote{\textbf{Water mist fire suppression of the Sydney Buoyant Turbulent Fire burner}}}. \textit{Proceedings of the 2023 Australian Combustion Symposium}, November 2023.
+        
+        \item[2023] \tab \textbf{V. Gupta}, T. Xiao, M. Dunn, J.L. Torero, A.R. Masri. \textbf{\enquote{\textbf{Blowoff at the leading edge of a vertical boundary layer diffusion flame established over a porous 3D printed burner}}}. \textit{Proceedings of the 12\textsuperscript{th} Mediterranean Combustion Symposium}, January 2023.
+
+		\item[2022] \tab \textbf{V. Gupta}, M.J. Dunn, S. Chu, O. Ilaya, H. Ain, B. Thornber. \textbf{\enquote{\textbf{Multiphase interactions of sprays in a small-scale UAS rotor-induced wake field}}}. \textit{Proceedings of the 23\textsuperscript{rd} Australasian Fluid Mechanics Conference}, December 2022.
+		
+		\item[2022] \tab S. Chu, M.J. Dunn, \textbf{V. Gupta}, D. Verstraete, O. Ilaya, H. Ain, B. Thornber. \textbf{\enquote{\textbf{Near-field multiphase interactions of uninhabited aerial systems and aerosol dispersion}}}. \textit{Proceedings of the 23\textsuperscript{rd} Australasian Fluid Mechanics Conference}, December 2022.
+	
+		\item[2021] \tab T. Xiao, \textbf{V. Gupta}, M.J. Dunn, A. Kourmatizis, J.L. Torero, A.R. Masri, \textbf{\enquote{Some characteristics of buoyant flames with varying levels of turbulence}}. \textit{Proceedings of the 13\textsuperscript{th} Asia-Pacific Conference on Combustion}. Abu Dhabi, United Arab Emirates. Dec 5--9.
+
+		\item[2021] \tab I. Pope, H. Xu, \textbf{V. Gupta}, J. Carrascal, D. Lange, M.S. McLaggan, J. Mendez, A. Solarte, D. Soriguer, J.L. Torero, F. Wiesner, J.P. Hidalgo. \textbf{\enquote{Fire dynamics in under-ventilated mass timber room compartments}}. \textit{Proceedings of the 12\textsuperscript{th} Asia-Oceania Symposium on Fire Science and Technology}. Brisbane, Australia. Dec 7--9. \href{https://doi.org/10.14264/7e19a8f}{doi:/10.14264/7e19a8f}.			
+
+		\item[2021] \tab N. White, H. Xu, J. Abraham, J. Carrascal, J.P. Hidalgo, \textbf{V. Gupta}, N. Weerakkody. \textbf{\enquote{Buoyancy-driven calorimeter for post-flashover heat release rate measurements}}. \textit{Proceedings of the 12\textsuperscript{th} Asia-Oceania Symposium on Fire Science and Technology}. Brisbane, Australia. Dec 7--9. \href{https://doi.org/10.14264/53ac4ef}{doi:/10.14264/53ac4ef}.
+	      
+	      \item[2020] \tab S. Nothard, D. Lange, J.P. Hidalgo, \textbf{V. Gupta}, M.S. McLaggan. \textbf{\enquote{The response of exposed timber in open plan compartment fires and its impact on the fire dynamics}}. \textit{Proceedings of the 11\textsuperscript{th} International Conference on Structures in Fire}. Brisbane, Australia. Nov 30--Dec 2. \href{https://doi.org/10.14264/5d97785}{doi:/10.14264/5d97785}.
+
+	    \item[2019] \tab \textbf{V. Gupta}, J.L. Torero, C. Maluk, J.P. Hidalgo. \textbf{\enquote{Analysis of Convective Heat Losses in a Full-Scale Compartment Fire Experiment}}. \textit{Proceedings of the 9\textsuperscript{th} International Seminar on Fire and Explosion Hazards}. St Petersburg, Russia. Apr 21--26. \href{http://doi.org/10.18720/SPBPU/2/k19-53}{doi:/10.18720/SPBPU/2/k19-53}.
+
+    \end{tablist}
+    
+\subsection*{Conference Presentations}
+
+ Asterisk* indicates paper published in Peer-Reviewed Journals or Proceedings above. \bigskip
+
+    \begin{tablist}
+         \item[2025] \tab \textbf{V. Gupta}, A.R.W. Macfarlane, M.J. Dunn, A. Alsewailem, T. Xiao, J. Subburaj, A. Farooq, A.R. Masri. \textbf{\enquote{\textbf{High-speed spectral imaging of Li-ion cell thermal runaway}}}. 4th International Symposium on Lithium Battery Fire Safety, Hong Kong. Oct. 30 -- Nov 2.
+
+         \item[2025] \tab A. Alsewailem, J. Subburaj, A. Elkhazraji, M. Sy, \textbf{V. Gupta}, M.J. Dunn, A.R. Masri, A. Farooq, A. \textbf{\enquote{\textbf{A laser-based HF sensor for early warning of thermal runaway in Li-ion batteries}}}. 4th International Symposium on Lithium Battery Fire Safety, Hong Kong. Oc
+
+         \item[2025] \tab B. Southern, \textbf{V. Gupta}, A.R.W. Macfarlane, M.J. Dunn, A. Alsewailem, T. Xiao, J. Subburaj, A. Farooq, A.R. Masri. \textbf{\enquote{\textbf{High resolution time evolution of ejecta ignition and propagation in LCO and NMC 18650 Li-ion cells}}}. 4th International Symposium on Lithium Battery Fire Safety, Hong Kong. Oct. 30 -- Nov 2.
+
+         \item[2025] \tab \textbf{V. Gupta}, A.R.W. Macfarlane, M.J. Dunn, A. Alsewailem, T. Xiao, J. Subburaj, A. Farooq, A.R. Masri. \textbf{\enquote{\textbf{Revealing ignition modes of Li-ion battery cells in thermal runaway with joint high-speed imaging}}}. 15th Asia-Pacific Conference on Combustion, Singapore. May. 18 -- 22.
+
+         \item[2025] \tab J. Dabrowski, \textbf{V. Gupta}, E.J. Weckman. \textbf{\enquote{\textbf{A medium-scale mass timber compartment fire experimental set-up and preliminary results testing ventilation}}}. 2nd NextGen Wood Conference 2025, Ottawa, Canada. May. 28 -- 30.
+
+        \item[2024] \tab T. Xiao, \textbf{*V. Gupta}, M.J. Dunn, A.R. Masri. \textbf{\enquote{\textbf{Joint OH-PLIF and Mie scattering imaging of enhanced water mist suppression of buoyant fires}}}. Combustion Institute's 40th International Symposium - Emphasizing Energy Transition, Milan, Italy. Jul. 21 -- 26.
+
+        \item[2023] \tab \textbf{V. Gupta}, T. Xiao, M. Dunn, J.L. Torero, A.R. Masri. \textbf{\enquote{\textbf{Temperature and mixture fraction imaging in a vertical wall fire}}}. 2023 Australian Combustion Symposium, Darwin, Australia. Nov. 26 -- 29.
+
+        \item[2023] \tab \textbf{V. Gupta}, M. Dunn, C. Avila Jiminez, A.R.W. Macfarlane, S. Galindo Lopez, A.R. Masri. \textbf{\enquote{\textbf{Venting of 18650 lithium-ion batteries during thermal runaway}}}. 2023 Australian Combustion Symposium, Darwin, Australia. Nov. 26 -- 29.
+
+        \item[2023] \tab *\textbf{V. Gupta}, T. Xiao, M. Dunn, J.L. Torero, A.R. Masri. \textbf{\enquote{\textbf{Leading edge stabilisation of vertical boundary layer diffusion flames}}}. 13\textsuperscript{th} International Symposium on Fire Safety Science, Tsukuba, Japan. Oct 22--27.
+        
+        \item[2023] \tab \textbf{V. Gupta}, T. Xiao, M. Dunn, A.R. Masri. \textbf{\enquote{\textbf{Structure of the Sydney buoyant fire burner with varying levels of fuel-turbulence}}}. 12\textsuperscript{th} FM Global Open Source CFD Fire Modelling Workshop, Norwood, United States of America, Apr 4--5.
+
+        \item[2023] \tab *\textbf{V. Gupta}, T. Xiao, M. Dunn, J.L. Torero, A.R. Masri. \textbf{\enquote{\textbf{Blowoff at the leading edge of a vertical boundary layer diffusion flame established over a porous 3D printed burner}}}. 12\textsuperscript{th} Mediterranean Combustion Symposium, Luxor, Egypt. Jan 23--26.
+
+    	\item[2021] \tab *\textbf{V. Gupta}, J.P. Hidalgo, A. Cowlard, C. Abecassis-Empis, A.H. Majdalani, C. Maluk, J.L. Torero. \textbf{\enquote{Ventilation effects on the thermal characteristics of fire spread modes in open-plan compartment fires}}. 13\textsuperscript{th} International Symposium on Fire Safety Science. Waterloo, Canada. April 26--May 1.
+    	
+    	\item[2021] \tab *\textbf{V. Gupta}, A.F. Osorio, J.L. Torero, J.P. Hidalgo. \textbf{\enquote{Mechanisms of flame spread and burnout in large enclosure fires}}. 38\textsuperscript{th} International Symposium on Combustion. Adelaide, Australia. January 24--29.
+    	
+        \item[2019] \tab *\textbf{V. Gupta}, J.L. Torero, C. Maluk, J.P. Hidalgo. \textbf{\enquote{Analysis of convective heat losses in a full-scale compartment fire experiment}}. 9\textsuperscript{th} International Seminar on Fire and Explosion Hazards. St Petersburg, Russia. April 21--26.
+        
+        \item[2018] \tab \textbf{V. Gupta}, J.E. Cadena, J.P. Hidalgo, A.F. Osorio, C. Maluk, A.H. Majdalani. \textbf{\enquote{Accounting for uncertainty in computational fluid dynamics modelling of fully-developed compartment fires}}. 12\textsuperscript{th} International Performance-Based Codes and Fire Safety Design Methods Conference. Honolulu, USA. April 23--28.
+
+	 \end{tablist}
+
+    \section*{HDR Supervision}
+
+	\begin{tablist}
+
+		\item[2025--27] \tab Braden Southern, \textbf{\enquote{Combustion physics in energy storage systems}} (MASc). University of Waterloo. \textbf{Main supervisor}.
+
+		\item[2025--27] \tab Keon Senez, \textbf{\enquote{Fire risk assessment framework for mass timber buildings}} (MASc). University of Waterloo. \textbf{Associate supervisor}.
+
+		\item[2023--25] \tab Jan Dabrowski, \textbf{\enquote{Mass timber compartment fire dynamics in under-ventilated conditions}} (MASc). University of Waterloo. \textbf{Associate supervisor}.
+
+		\item[2023--25] \tab Ayaan Lakhani, \textbf{\enquote{Gas emissions from wildland fuels}} (MASc). University of Waterloo. \textbf{Associate supervisor}.
+
+		\item[2021--24] \tab Tony Xiao, \textbf{\enquote{Investigations of fire dynamics and enhanced fire suppression}} (PhD). The University of Sydney. \textbf{Associate supervisor}.
+        
+	\end{tablist}
+
+    \section*{Media and Public Engagement} % add media appearances from August 2024 & news articles
+
+    \subsection*{Radio}
+        
+        \begin{tablist}
+        
+        \item[2025] \tab Interview on The Mike Farwell Show (570AM), Rogers TV, and CityNews Kitchener on Canadian response to wildfires (August 2025).
+        \item[2025]  \tab Interviews on Canadian Broadcasting Corporation (CBC) radio affiliates (CBC Windsor, CBC Toronto, CBC London, CBC Thunder Bay, CBC Sudbury, CBC Kitchener, and Ontario Morning) on fireproofing of communities for wildfires (August 2025).
+        
+        \end{tablist}
+
+    \subsection*{News Coverage}
+
+    \begin{tablist}
+    
+    \item[2025] \tab "\href{https://www.cbc.ca/news/canada/toronto/kawartha-lakes-fourth-fire-active-1.7606768}{New fire blazes out of control in Kawawrtha Lakes}", Arrthy Thayaparan, Julia Alevato. CBC News, 12th August 2025.
+
+    \item[2025] \tab "\href{https://www.therecord.com/news/waterloo-region/university-of-waterloo-researchers-look-for-new-ways-to-fight-wildfires/article_3c6d2d6a-f8e3-54ce-8e4d-4c2df5c76241.html}{University of Waterloo researchers look for new ways to fight wildfires}", Joe McGinty. Waterloo Region Record, 14th August 2025.
+
+    \item[2025] \tab "\href{https://educationnewscanada.com/article/education/level/university/1/1153676/wildfires-are-changing-and-so-must-our-response.html}{Wildfires are changing and so must our response}. Education News Canada, 11th August 2025. 
+    
+    \end{tablist}
+    
+\end{document}
+
