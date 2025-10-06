@@ -1,0 +1,8 @@
+from: latex
+to: html
+standalone: true
+metadata:
+  title: "Vinny Gupta — CV"
+  lang: en
+include-in-header:
+  - style.css
